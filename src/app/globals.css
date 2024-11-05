@@ -1,42 +1,768 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Space Grotesk';
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+
+
+
+
+/* =====================reviewCarousel css====================== */
+
+.reviewCarouselParent .owl-carousel .owl-dots {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin-top: 32px;
+  margin-top: 32px;
 }
 
-a {
-  color: inherit;
+.reviewCarouselParent .reviewCarousel .owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+button.owl-dot {
+  color: red !important;
+  background-color: #EAE6FF !important;
+  height: 10px !important;
+  width: 10px !important;
+  border-radius: 100%;
+}
+
+.reviewCarouselParent .reviewCarousel .owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+button.owl-dot.active {
+  background-color: #6A4DFF !important;
+
+}
+
+/* ========contact us similar section =========== */
+
+.turnitContactHeading h2 {
+  color: #11121C;
+  text-align: center;
+  font-family: "Space Grotesk";
+  font-size: 31.875px;
+  font-weight: 700;
+}
+
+.turnitContactHeadingLink a {
+  color: #11121C;
+  text-align: center;
+  font-family: "Space Grotesk";
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.turnitContactHeadingLink a span {
+  color: rgba(17, 18, 28, 0.75);
+}
+
+.turnitContactHeadingLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  position: relative;
+}
+
+/* 
+.turnitContactHeadingLink::after {
+    position: absolute;
+    content: "/";
+    color: rgba(17, 18, 28, 0.75);
+    text-align: center;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 300;
+    top: 50%;
+    left: 49.4%;
+    transform: translate(-50%, -50%);
+} */
+
+.turnitContactHeadingLinkClr {
+  color: rgba(17, 18, 28, 0.75);
+}
+
+.turnitContactHeading {
+  padding-top: 60px;
+  padding-bottom: 196px;
+}
+
+
+
+
+/* ========= login page ========== */
+
+/* Ensure the font is applied globally */
+
+
+
+
+.left-side {
+  border-radius: 16px;
+  border: 1px solid #BDBFD4;
+  width: 100%;
+  max-width: 610px;
+  padding: 140px 80px 100px 80px;
+}
+
+.left-side h1 {
+  color: #11121C;
+  text-align: center;
+  font-family: "Space Grotesk";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.highlight {
+  color: #7c4dff;
+}
+
+.imageContainerLogo img {
+  margin-top: -70px;
+}
+
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.oauth-btn {
+  width: 100%;
+  padding: 16px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  max-width: 463px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  gap: 16px;
+  transition: 0.2s;
+}
+
+.oauth-btn:hover {
+  background: #7c4dff;
+  color: white;
+}
+
+.google-btn {
+  background-color: #fff;
+}
+
+.apple-btn {
+  color: #11121C;
+  text-align: center;
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  font-weight: 500;
+  gap: 16px;
+}
+
+.icon {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.divider {
+  text-align: center;
+  position: relative;
+  max-width: 463px;
+  margin: 0 auto;
+  padding: 20px 0;
+  color: #888;
+  font-size: 14px;
+  position: relative;
+}
+
+.turnitLogoEml {
+  border-radius: 8px;
+  border: 1px solid #BDBFD4;
+  background: #FFF;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 18px;
+  max-width: 463px;
+  margin: auto;
+  margin-top: 18px;
+}
+
+.turnitLogoEml .input-field::placeholder {
+  color: rgba(17, 18, 28, 0.75);
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.forgot-password {
+  padding-top: 12px;
+  padding-bottom: 18px;
+  max-width: 463px;
+  margin: 0 auto;
+}
+
+.forgot-password a {
+  color: #6A4DFF;
+  font-family: "Space Grotesk";
+  font-size: 14px;
+  font-weight: 300;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.right-side .submit-btn {
+  color: #FFF;
+  text-align: center;
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #6A4DFF;
+  background-color: #6A4DFF;
+  width: 100%;
+  padding: 17px;
+  transition: 0.2s;
+}
+
+.right-side .submit-btn:hover {
+  background-color: #FFF;
+  color: #6A4DFF;
+}
+
+.signup-section {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-section span,
+.signup-section a {
+  color: #11121C;
+  text-align: center;
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+
+}
+
+.turnitLogoEml input {
+  width: 100%;
+  outline: none;
+}
+
+.signup-section a {
+  color: #6A4DFF;
+}
+
+.turnitLoginbg {
+  display: flex;
+  padding-top: 50px;
+  align-items: center;
+  position: relative;
+}
+
+.divider span {
+  color: #11121C;
+  text-align: center;
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  font-weight: 300;
+  background-color: white;
+  padding: 0 16px;
+  position: relative;
+
+}
+
+/* .divider span::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #BDBFD4;
+  top: 50%;
+  transform: translatey(-50%);
+} */
+.divider::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #BDBFD4;
+  top: 50%;
+  left: 0;
+  /* right: 0; */
+  transform: translatey(-50%);
+}
+
+.right-side {
+  width: 100%;
+  padding: 80px 85.5px;
+  /* position: relative; */
+}
+
+.loginBack {
+  position: absolute;
+  top: 74px;
+  right: 0;
+  transition: 0.2s;
+}
+
+.loginBack:hover {
+  transform: scale(1.1);
+}
+
+.turnitLogoEml {
+  position: relative;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+}
+
+
+/* ========signin page ========== */
+
+
+.turnitfrmfl {
+  display: flex;
+  max-width: 463px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.turnitfrmfl .turnitLogoEml, .turnitfrmfl .turnitLogoEml{
+margin-left: 0;
+margin-right: 0;
+width: 100%;
+}
+
+.forgsubbtn{
+  margin-top: 18px;
+}
+/* ============================successPopUp===================== */
+.successPopUp{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+/* ====slick crousel ====== */
+
+/* Custom gap for the slides */
+.slick-slide {
+  padding: 0 10px; /* Half of the gap on both sides */
+}
+
+.slick-list {
+  margin: 0 -10px; /* To balance out the padding of the slides */
+}
+
+.turnitProfess .slick-track .item{
+  display: flex !important;
+  justify-content: center;
+  outline: none;
+}
+
+.reviewCarouselParent .slick-dots li button:before {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 1000px;
+  background: #EAE6FF;
+  content: '' !important;
+  opacity: 1 !important;
+}
+
+.reviewCarouselParent .slick-dots li.slick-active{
+  border-radius: 1000px;
+  background: #6A4DFF;
+  width: 10px !important;
+  height: 10px !important;
+}
+.reviewCarouselParent .slick-dots li.slick-active button:before {
+  opacity: 0 !important;
+  color: black;
+}
+.reviewCarouselParent .slick-dots li, .slick-dots li button {
+  width: 10px !important;
+  height: 10px !important;
+}
+.reviewCarouselParent .slick-dots {
+  bottom: -42px !important;
+}
+
+
+
+
+ /* ======= DP Modal ======== */
+
+ .turnitDpEditBgModal .modal-content .modal-body,
+ .turnitEmailBgModal .modal-content .modal-body{
+  padding: 30px 48px !important;
+}
+
+.turnitDpEditBgModal .modal-content{
+  border-radius: 16px !important;
+}
+
+
+.turnitEmailBgModal .modal-content{
+  border-radius: 16px !important;
+  max-width: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+ 
+/* ========= accordion dashboard mobile ========== */
+
+.turnitAccountBgAccor .accordion-button:not(.collapsed) {
+  color: unset;
+  background-color: unset;
+  box-shadow: unset;
+}
+
+.turnitAccountBgAccor .accordion-button:focus {
+  box-shadow: unset;
+
+}
+
+.turnitAccountBgAccor .accordion-item{
+  border: none;
+  border-bottom: 1px solid #E3E6EA;
+}
+
+.turnitAccountBgAccor .accordion-button::after {
+  background-image: url(/images/dash-arrow.svg);
+  width: 8px;
+  height: 8px;
+  background-size: contain;
+}
+
+.turnitAccountBgAccor .accordion-button {
+    padding: 12px 6px;
+    gap: 8px;
+}
+
+.turnitAccountBgAccor .accordion-item:last-of-type {
+  border-bottom-right-radius: unset;
+  border-bottom-left-radius: unset;
+}
+
+
+@media (max-width:1399px) {
+  .imageContainerLogo img {
+    margin-top: -40px;
   }
 }
+
+@media (max-width:991px) {
+  .turnitContactHeading {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  .left-side {
+    display: none;
+  }
+}
+
+@media (max-width:767px) {
+  .turnitContactHeading h2 {
+    font-size: 22.875px;
+  }
+
+  .owlCrNxt .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .owlCrNxt .owl-carousel .owl-item img {
+    width: unset;
+  }
+
+  .right-side {
+    padding: 10px;
+  }
+
+  .loginBack {
+    top: 20px;
+  }
+
+  .turnitLoginbg {
+    padding-top: 20px;
+  }
+  .turnitDpEditBgModal .modal-content .modal-body, .turnitEmailBgModal .modal-content .modal-body {
+    padding: 30px 18px !important;
+}
+
+}
+
+
+
+
+
+
+
+
+/* =========== mukul =========== */
+
+
+
+.planSelectBtn .btn-group,
+.btn-group-vertical {
+
+  display: unset;
+  vertical-align: middle;
+}
+
+.planSelectBtn span .btn {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+
+}
+
+.btn-check:checked+.btn {
+  background-color: #6A4DFF !important;
+  color: white !important;
+  font-family: Space Grotesk;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+
+}
+
+.btn-group>.btn-group:not(:last-child)>.btn,
+.btn-group>.btn.dropdown-toggle-split:first-child,
+.btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+  border-radius: 8px !important;
+
+}
+
+.btn-group>:not(.btn-check:first-child)+.btn {
+  border-radius: 8px !important;
+
+}
+
+.planSelectBtn .btn-outline-primary {
+  color: black !important;
+  font-family: Space Grotesk;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+
+}
+
+
+
+
+
+
+.homeFaqSection {
+  padding: 60px 0;
+}
+
+.homeFaqSection .faqHeading {
+  font-family: Space Grotesk;
+  font-size: 47.81px;
+  font-weight: 700;
+  line-height: 60px;
+  text-align: center;
+  color: #11121C;
+  max-width: 810px;
+  margin: auto;
+
+}
+
+.faqAccordionParent {
+  margin-top: 72px;
+}
+
+.faqAccordionParent .accordion-item {
+  max-width: 854px;
+  margin: auto;
+  border: none;
+  border-bottom: 1px solid #C3D1E3;
+}
+
+.homeFaqSection .accordion-header {
+  margin-top: 24px;
+}
+
+.homeFaqSection .accordion-button {
+  font-family: Space Grotesk;
+  font-size: 24px !important;
+  font-weight: 300;
+  line-height: 30px;
+
+  color: #11121C !important;
+
+
+}
+
+.homeFaqSection .accordion-button::after {
+  background-image: none !important;
+  /* background-image: url(/images/accordionBtn.svg) !important; */
+}
+
+.homeFaqSection .accordion-button::before {
+  background-image: url(/images/accordionBtn.svg) !important;
+}
+
+.homeFaqSection .accordion-button:not(.collapsed) {
+  background-color: unset !important;
+  color: #6A4DFF !important;
+  border-bottom: 1px solid;
+
+}
+
+.homeFaqSection .accordion-button:focus {
+  box-shadow: unset !important;
+}
+
+
+.homeFaqSection .accordion-button::before {
+  flex-shrink: 0;
+  width: var(--bs-accordion-btn-icon-width);
+  height: var(--bs-accordion-btn-icon-width);
+  margin-right: 24px;
+  content: "";
+  background-image: var(--bs-accordion-btn-icon);
+  background-repeat: no-repeat;
+  background-size: var(--bs-accordion-btn-icon-width);
+  transition: var(--bs-accordion-btn-icon-transition);
+}
+
+.homeFaqSection .accordion-button:not(.collapsed)::before {
+
+  background-image: url(/images/minusAccordion.svg) !important;
+  background-position: center;
+}
+
+
+
+@media screen and (max-width: 1280px) {
+  .homeFaqSection .faqHeading {
+    font-size: 40px;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .homeFaqSection .faqHeading {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .homeFaqSection {
+    padding: 30px;
+  }
+
+  .faqAccordionParent {
+    margin-top: 30px;
+  }
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .homeFaqSection .faqHeading {
+    max-width: 550px;
+    line-height: 50px;
+  }
+
+  .faqAccordionParent {
+    margin-top: 30px;
+  }
+
+  .homeFaqSection .accordion-button {
+    font-size: 20px !important;
+  }
+
+
+}
+
+
+@media screen and (max-width: 425px) {
+  .homeFaqSection {
+    padding: 15px 0px;
+  }
+
+  .homeFaqSection .faqHeading {
+    line-height: 33px;
+  }
+
+  .faqAccordionParent {
+    padding: 0px;
+  }
+
+  .homeFaqSection .faqHeading {
+    font-size: 24px;
+  }
+
+  .planSelectBtn span .btn {
+    padding: 5px 12px;
+  }
+
+  .homeFaqSection .accordion-header {
+    margin-top: 10px;
+  }
+
+  .homeFaqSection .accordion-button {
+    font-size: 16px !important;
+    line-height: 25px;
+    padding: 10px !important;
+  }
+
+  .homeFaqSection .accordion-body {
+    font-size: 14px;
+  }
+
+  .writingToolSection .row {
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+ 
+
+}
+
+
+

@@ -1,0 +1,1823 @@
+/* body{
+    background: red;
+} */
+
+.turnitDashboardRight {
+    position: fixed;
+    width: 270px;
+    height: 100vh;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 10;
+    padding: 24px;
+    background: #FFF;
+    /* box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.08); */
+}
+
+.menuOpen {
+    left: 0;
+    /* Sidebar is open */
+}
+
+.menuClosed {
+    left: -270px;
+    /* Sidebar is closed (hidden off-screen) */
+}
+
+.turnitDashboardBg {
+    /* display: flex; */
+    transition: all 0.3s ease-in-out;
+    background: #FAFAFA;
+    height: 100vh;
+}
+
+.turnitDashMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.turnitDashMenuOC {
+    cursor: pointer;
+}
+
+.openButton {
+    position: fixed;
+    top: 24px;
+    left: 10px;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+
+.turnitDashMenuPages ul li a {
+    color: #777;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14.5px 12px;
+    transition: 0.2s;
+}
+
+.turnitDashMenuPages ul li a svg path {
+    transition: 0.2s;
+}
+
+.turnitDashMenuPages ul li a.active {
+    color: #3B3DEB;
+    border-radius: 10px;
+    border-right: 3px solid #3B3DEB;
+    background: #E8E9FF;
+}
+
+.turnitDashMenuPages ul li a:hover {
+    color: #3B3DEB;
+    border-radius: 10px;
+    border-right: 3px solid #3B3DEB;
+    background: #E8E9FF;
+}
+
+.turnitDashMenuPages ul li a:hover svg path {
+    stroke: #3B3DEB;
+    transition: 0.2s;
+
+}
+
+.turnitDashMenuPages ul {
+    margin: 0;
+    padding: 0;
+    padding-top: 24px;
+}
+
+.turnitDashMenuRecent h6 {
+    color: #444;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    padding: 17.3px 12px;
+}
+
+.turnitDashMenuRecent a {
+    overflow: hidden;
+    color: #888;
+    text-overflow: ellipsis;
+    font-family: "Space Grotesk";
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6.8px 12px;
+    transition: 0.2s;
+}
+
+.turnitDashMenuRecent a:hover {
+    color: #3B3DEB;
+}
+
+.turnitDashMenuRecent a svg path {
+    transition: 0.2s;
+}
+
+.turnitDashMenuRecent a:hover svg path {
+    fill: #3B3DEB;
+}
+
+.turnitDashMenuLogout button {
+    color: #333;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    bottom: 24px;
+    width: 100%;
+    max-width: 220px;
+    transition: 0.2s;
+    padding: 10px 12px;
+}
+
+.turnitDashMenuLogout button svg path {
+    transition: 0.2s;
+}
+
+.turnitDashMenuLogout button:hover svg path {
+    fill: #3B3DEB;
+}
+
+.turnitDashMenuLogout button:hover {
+    color: #3B3DEB;
+    border-radius: 10px;
+    border-right: 3px solid #3B3DEB;
+    background: #E8E9FF;
+}
+
+.turnitDashboard {
+    display: flex;
+}
+
+/* ====== left side ======= */
+
+.turnitDashboardLeft {
+    width: 100%;
+    transition: margin-left 0.2s ease-in-out;
+    background: #FFF;
+    /* box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.08); */
+    padding: 20px 24px;
+}
+
+.turnitDashChild {
+    transition: margin-left 0.2s ease-in-out;
+}
+
+.contentWithoutMenuchild {
+    margin-left: 0px;
+    padding: 0;
+}
+
+.contentWithMenu {
+    margin-left: 270px;
+    /* Content is pushed when sidebar is open */
+}
+
+.contentWithoutMenu {
+    margin-left: 0px;
+    padding: 20px 24px 20px 64px;
+    /* Content is normal when sidebar is closed */
+}
+
+.turnitDashboardLeftContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tDLeftContentListProfile {
+    display: flex;
+    gap: 10px;
+}
+
+.tDleftAvtar {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid #EEE;
+    gap: 14px;
+    padding: 0 20px 0 6px;
+    position: relative;
+    cursor: pointer;
+}
+
+.tDleftAvtar .dashUserBtnPr{
+position: absolute;
+padding-top: 150px;
+right: 24px;
+opacity: 0;
+pointer-events: none;
+}
+
+.tDleftAvtar:hover .dashUserBtnPr{
+opacity: 1;
+pointer-events: unset;
+}
+
+.dashUserBtnPr ul{
+
+box-shadow: 0 4px 24px 0 rgba(15, 58, 110, .25), 0 4px 0 0 #6a4dff;
+background: #fff;
+border-radius: 4px;
+position: relative;
+margin: 0;
+padding: 0;
+}
+
+.dashUserBtnPr ul li a, .dashUserBtnPr ul li{
+color: #334155;
+text-align: center;
+font-family: "Space Grotesk";
+font-size: 16px;
+font-weight: 400;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: .2s;
+cursor: pointer;
+}
+.dashUserBtnPr ul li:hover a, .dashUserBtnPr ul li:hover{
+    color: #3B3DEB;
+}
+
+.dashUserBtnPr ul li{
+    margin: 0;
+    padding: 8px 30px 8px 10px;
+width: 100%;
+}
+
+.turnitDashboardLeftContentListName h4 {
+    color: #3B3DEB;
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.tDLeftDarkMode button {
+    border-radius: 100px;
+    border: 1px solid #EEE;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tDLeftNotification button {
+    border-radius: 100px;
+    border: 1px solid #EEE;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tDleftAvtar h5 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+}
+
+.tDleftAvtar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.turnitDashMenuRecentLi {
+
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 140px;
+    padding-right: 12px;
+    border-radius: 10px;
+    /* Custom Scrollbar */
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #4B4AFF #EAEAFD;
+    /* Handle color #4B4AFF and track color #EAEAFD */
+    scrollbar-width: none;
+}
+
+/* For WebKit-based browsers (Chrome, Safari) */
+.turnitDashMenuRecentLi::-webkit-scrollbar {
+    width: 5px;
+    /* Set scrollbar width to 5px */
+}
+
+.turnitDashMenuRecentLi::-webkit-scrollbar-track {
+    background: #EAEAFD;
+    /* Track color (light purple) */
+    border-radius: 10px;
+    /* Rounded track */
+}
+
+.turnitDashMenuRecentLi::-webkit-scrollbar-thumb {
+    background-color: #4B4AFF;
+    /* Scroll handle color (blue) */
+    border-radius: 10px;
+    /* Rounded corners for thumb (both top and bottom) */
+}
+
+.turnitDashMenuRecentLi::-webkit-scrollbar-thumb:hover {
+    background-color: #3333FF;
+    /* Darker blue shade on hover */
+}
+
+/* Add top and bottom rounded edges to the thumb */
+.turnitDashMenuRecentLi::-webkit-scrollbar-thumb {
+    background-color: #4B4AFF;
+    border-radius: 10px;
+    /* Full border-radius for rounded ends */
+}
+
+
+/* ========= dash user page ========= */
+
+.turnitDashOvervContLink a {
+    color: #000;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.turnitDashOvervContLink .turnitDashOvervContLinkActive {
+    color: #3B3DEB;
+    font-weight: 500;
+}
+
+.turnitDashOvervContLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.startDashboardOverviewContent {
+    display: flex;
+    gap: 32px;
+}
+
+.startDashboardOverview {
+    border-radius: 16px;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.80);
+    box-shadow: 0px 5px 20px -1px rgba(0, 0, 0, 0.10);
+    padding: 16px 32px 32px 32px;
+    margin-top: 24px;
+}
+
+.turnitDashOvervCont {
+    padding: 32px 48px;
+}
+
+.startDashboardOverview h4 {
+    color: #1A1A1C;
+    font-family: "Space Grotesk";
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.sDOverviewContentLeft {
+    border-radius: 16px;
+    border: 1px solid #E3E3E3;
+    background: #FFF;
+    padding: 18px;
+    height: 522px;
+    width: 100%;
+}
+
+.sDOverviewContentLeftScroll {
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 473px;
+    padding-right: 12px;
+    /* Custom Scrollbar */
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #4B4AFF #EAEAFD;
+    /* Handle color #4B4AFF and track color #EAEAFD */
+}
+
+/* For WebKit-based browsers (Chrome, Safari) */
+.sDOverviewContentLeftScroll::-webkit-scrollbar {
+    width: 5px;
+    /* Set scrollbar width to 5px */
+}
+
+.sDOverviewContentLeftScroll::-webkit-scrollbar-track {
+    background: #EAEAFD;
+    /* Track color (light purple) */
+    border-radius: 10px;
+    /* Rounded track */
+}
+
+.sDOverviewContentLeftScroll::-webkit-scrollbar-thumb {
+    background-color: #4B4AFF;
+    /* Scroll handle color (blue) */
+    border-radius: 10px;
+    /* Rounded corners for thumb (both top and bottom) */
+}
+
+.sDOverviewContentLeftScroll::-webkit-scrollbar-thumb:hover {
+    background-color: #3333FF;
+    /* Darker blue shade on hover */
+}
+
+/* Add top and bottom rounded edges to the thumb */
+.sDOverviewContentLeftScroll::-webkit-scrollbar-thumb {
+    background-color: #4B4AFF;
+    border-radius: 10px;
+    /* Full border-radius for rounded ends */
+}
+
+
+.sDOContentLeftTxt h5 {
+    color: #1A1A1C;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.sDOContentLeftTxt p {
+    color: #7E7E86;
+    font-family: "Space Grotesk";
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.sDOContentLeftTxtList ul li h6 {
+    color: #1A1A1C;
+    font-family: "Space Grotesk";
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 9px;
+}
+
+.sDOContentLeftTxtList ul li p {
+    color: #999;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+
+}
+
+.sDOContentLeftTxtList ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 16px;
+}
+
+.sDOContentLeftTxtList ul li {
+    margin-bottom: 12px;
+}
+
+.sDOContentLeftTxtVersion h6 {
+    color: #1A1A1C;
+    font-family: "Space Grotesk";
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.sDOContentLeftTxtVersion h6 span {
+    color: #7E7E86;
+}
+
+.sDOContentLeftTxtVersion ul li {
+    color: #7E7E86;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    /* 18.2px */
+    margin-bottom: 6px;
+}
+
+.sDOContentLeftTxtVersion ul {
+    list-style-type: disc;
+    padding-left: 16px;
+}
+
+.sDOContentLeftTxtVersion {
+    border-bottom: 1px solid #E4E4E7;
+    padding-top: 12px;
+}
+
+.sDOContentLeftTxtVersion ul {
+    margin: 0;
+    margin-bottom: 12px;
+}
+
+.sDOContentLeftTxtPara {
+    padding-bottom: 6px;
+}
+
+
+
+/* ======== AI Detector Page ========= */
+
+
+.starttextAreaContainer {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.starttextAreaContainer .textAreaContainer{
+    height: 100%;
+}
+
+.textAreaContainer {
+    background-color: #fff;
+    padding: 32px;
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0px 5px 20px -1px rgba(0, 0, 0, 0.10);
+    height: 605px;
+}
+
+.textAreaContainer textarea {
+    width: 100%;
+    height: 417px;
+    padding: 15px;
+    font-size: 16px;
+    color: #7C838F;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 140%;
+    resize: none;
+    outline: none;
+    border-radius: 16px;
+}
+
+.textAreaContainerBorderLine {
+    border-radius: 16px;
+    border: 1px solid #E3E3E3;
+    /* overflow: auto; */
+}
+
+.textAreaContainer textarea::placeholder {
+    color: #7C838F;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 140%;
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.buttonsGroup {
+    display: flex;
+    gap: 15px;
+}
+
+.actionButton {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 11px 24px;
+    cursor: pointer;
+    color: #7C838F;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 27px;
+    border: 1px solid #000;
+    gap: 12px;
+}
+
+.actionButton img {
+    margin-right: 10px;
+}
+
+.textInfo {
+    color: #7C838F;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.detectorSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.aiDetector {
+    border: none;
+    padding: 10px 40px;
+    cursor: pointer;
+    position: relative;
+    color: #F3F8FF;
+    text-align: center;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 6px;
+    background-color: #3B3DEB;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.creditsRequired {
+    color: #7C838F;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 300;
+    text-align: end;
+}
+
+
+/* TextAreaComponent.module.css */
+
+/* Other existing styles */
+
+/* label.actionButton {
+    cursor: pointer;
+} */
+
+/* Ensure that input[type="file"] is hidden */
+.actionButton input[type='file'] {
+    display: none;
+}
+
+.actionButtonsWrapAllBg {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 16px 16px 32px 16px;
+}
+
+/* ======== Generator ======== */
+
+/* PlanStatus.module.css */
+.planStatusContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 32px;
+}
+
+.limitedText {
+    color: #333;
+    text-align: center;
+    font-family: "Space Grotesk";
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.planToggle {
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    position: relative;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 9px;
+    background: #CDC4FF;
+}
+
+.planToggle.active {
+    background-color: #3b3deb;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    background-color: #3B3DEB;
+    /* Blue */
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+}
+
+.circle.active {
+    left: 17px;
+    /* Moves the circle to the right when active */
+}
+
+.planText {
+    color: #333;
+    text-align: center;
+    font-family: "Space Grotesk";
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.textAreaContainerBorderhight textarea {
+    height: 357px;
+}
+
+
+.turnitAccountBg {
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 0px 5px 20px -1px rgba(0, 0, 0, 0.10);
+    padding: 32px;
+    min-height: 605px;
+    margin-top: 24px;
+}
+
+.turnitAccountUserProfile .turnitAccountUserProfileavt {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.turnitAccountUserProfile {
+    position: relative;
+}
+
+.taupEdit {
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+}
+
+.turnitAccountUser {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    padding-bottom: 43px;
+}
+
+.tapUserName h4 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+
+
+
+
+.tapSidebarAcclink a {
+    color: #444;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 24px;
+    transition: 0.2s;
+    width: max-content;
+}
+
+.tapSidebarAcclink a:last-child {
+    padding-bottom: 0;
+}
+
+.tapSidebarAcclink a svg path {
+    transition: 0.2s;
+}
+
+.tapSidebarAcclink a:hover svg path {
+    fill: #3B3DEB;
+}
+
+.tapSidebarAcclink a:hover {
+    color: #3B3DEB;
+}
+
+.tapSidebarAcclink {
+    padding: 8px 0;
+    margin: 24px 0;
+    border-left: 1px solid #DCDFE4;
+    padding-left: 15px;
+    height: max-content;
+}
+
+.tapSidebarAcc {
+    display: flex;
+    gap: 50px;
+}
+
+.tapSidebarAccChildren {
+    border-radius: 12px;
+    border: 1px solid #E3E3E3;
+    width: 100%;
+    padding: 32px 24px;
+    min-height: 391px;
+}
+
+/* ====== DashAccount page======= */
+
+.PrfAccBg {
+    display: flex;
+    gap: 60px;
+}
+
+
+.prfAccInfoProfile h4 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.prfAccInfoProfile p {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 48px;
+}
+
+.prfAccInfoProfileName h5 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.prfAccInfoProfileName p {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0;
+    padding-bottom: 48px;
+
+}
+
+.prfAccInfoProfileEmail h5 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.prfAccInfoProfileEmail p {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    border-bottom: 1px solid #DCDFE4;
+    padding-bottom: 12px;
+    margin: 0;
+}
+
+.prfAccInfoProfileEmail p button:hover svg path {
+    fill: #3B3DEB;
+}
+
+
+.prfAccInfoProfilePassword h4 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.prfAccInfoProfilePassword button {
+    color: #3B3DEB;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 34px;
+}
+
+.prfAccInfoProfileSubscr p {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.prfAccInfoProfileSubscr h6 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    margin: 0;
+    padding: 12px 0;
+    font-weight: 500;
+}
+
+/* ===== DashUserAccount page ========= */
+
+.tuhmAuAccAccount h4 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    /* 25.2px */
+    margin-bottom: 12px;
+}
+
+.tuhmAuAccAccount h6 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.tuhmAuAccAccount p {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.tuhmAuAccDanger {
+    border-radius: 12px;
+    background: #DCD6FA;
+    padding: 24px 32px;
+}
+
+.tuhmAuAccDanger h4 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.tuhmAuAccDanger p {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 36px;
+}
+
+.tuhmAuAccDanger button {
+    border-radius: 6px;
+    background-color: #3B3DEB;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    border: 1px solid #3B3DEB;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #F3F8FF;
+    text-align: center;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 500;
+    padding: 11px 40px;
+    transition: 0.2s;
+}
+
+.tuhmAuAccDanger button:hover {
+    color: #3B3DEB;
+    background-color: white;
+}
+
+.tuhmAuAccDanger button svg path {
+    transition: 0.2s;
+}
+
+.tuhmAuAccDanger button:hover svg path {
+    fill: #3B3DEB;
+}
+
+/* ==========DashAccountBilling=========== */
+
+
+.turnitDashBillingContent {
+    padding: 24px 0;
+    border-bottom: 1px solid #C3D1E3;
+}
+
+.turnitDashBillingContent h4 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.turnitDashBillingContent p {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+.turnitDashBillingCurrent {
+    padding: 24px 0;
+}
+
+.turnitDashBillingCurrent h4 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.turnitDashBillingCurrent p {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ===== DashAiDetector ======== */
+
+
+.turnitApiDetectorContent h4 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.turnitApiDetectorContent p {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+
+.tApiDetectorKey h5 {
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.tApiDetectorKey input {
+    border-radius: 7px;
+    border: 1px solid #E4E4E7;
+    background: #FFF;
+    padding: 10px 12px;
+    width: 100%;
+    outline: none;
+}
+
+.tApiDetectorKey input::placeholder {
+    color: #71717A;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.tApiDetectorKey {
+    flex: 0 0 32%;
+}
+
+.turnitApiDetectorKey {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.turnitApiDetectorContent {
+    margin-bottom: 11px;
+}
+
+
+
+
+/* ======= DP Modal ======== */
+
+
+.turnitDpEdit h2 {
+    color: #333;
+    font-family: "Space Grotesk";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.turnitDpEdit p {
+    color: #666;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.turnitDpEditImg img {
+    width: 192px;
+    height: 192px;
+    object-fit: cover;
+}
+
+.turnitDpEditImg {
+    display: flex;
+    justify-content: center;
+}
+
+.turnitDpEditUpload,
+.turnitDpEditRemove {
+    border-radius: 27px;
+    background-color: #3B3DEB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F8F8F8;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 700;
+    padding: 9.5px 0px;
+    width: 100%;
+    gap: 12px;
+    border: 1px solid #3B3DEB;
+    transition: 0.2s;
+}
+.turnitDpEditButtons form{
+    width: 100%;
+}
+
+.turnitDpEditUpload:hover,
+.turnitDpEditRemove:hover {
+    color: #3B3DEB;
+    background-color: white;
+}
+
+.turnitDpEditUpload svg path,
+.turnitDpEditRemove svg path {
+    transition: 0.2s;
+}
+
+.turnitDpEditUpload:hover svg path,
+.turnitDpEditRemove:hover svg path {
+    fill: #3B3DEB;
+}
+
+
+.turnitDpEditButtons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.turnitDpEditImg {
+    padding-top: 48px;
+    padding-bottom: 32px;
+}
+
+.turnitDpEdit {
+    max-width: 350px;
+}
+
+.turnitDpEditClose {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+
+/* ===== email verification modal ======= */
+
+.turnitEmailChange input {
+    border-radius: 4px;
+    border: 1px solid #888;
+    padding: 7px 10px;
+    width: 100%;
+    margin-top: 16px;
+    outline: none;
+}
+
+.turnitEmailChange input::placeholder {
+    color: #888;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.turnitEmailCancelButton {
+    border-radius: 27px;
+    border: 1px solid #111;
+    color: #111;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 700;
+    width: 100%;
+    padding: 5.5px;
+    margin-top: 16px;
+}
+
+.turnitEmailVerifButton {
+    border-radius: 27px;
+    background: #3B3DEB;
+    border: 1px solid #3B3DEB;
+    color: #F8F8F8;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 700;
+    width: 100%;
+    padding: 5.5px;
+    margin-top: 12px;
+}
+
+.turnitEmailChange .passwordInput {
+    position: relative;
+}
+
+.turnitEmailChange .passwordInput span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent overlay */
+    z-index: 5;
+    /* Ensure it's below the sidebar but above other content */
+}
+
+.turnitAccountBgAccor {
+    display: none;
+}
+
+.turnitApiDetectorBg button {
+    border-radius: 6px;
+    background-color: #3B3DEB;
+    border: 1px solid #3B3DEB;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    color: #F3F8FF;
+    text-align: center;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-weight: 700;
+    padding: 9px;
+    width: 100%;
+    max-width: 186px;
+    margin-top: 16px;
+    transition: 0.2s;
+}
+
+.turnitApiDetectorBg button:hover{
+    background-color: white;
+    color: #3B3DEB;
+}
+
+
+
+.starttextAreaContainer .pricingPlanHeading{
+    display: none;
+}
+
+.stacHeading{
+    color: #11121C;
+text-align: center;
+font-family: "Space Grotesk";
+font-size: 24px;
+font-weight: 700;
+margin-bottom: 12px;
+}
+
+.starttextAreaContainer .dashPricingPlanSection {
+    padding-top: 0;
+    padding-bottom: 0px;
+}
+
+.yearlyPlanContent .planCard {
+    padding: 18px 24px;
+}
+ .dashPricingPlanSection .yearlyPlanContent .planTag{
+    font-size: 24px;
+}
+
+/* In dashboard.module.css or relevant CSS module */
+.highlightGreen {
+    color: #22C55E;
+}
+
+.clickBordButtonsWrapAllBg{
+    border-left: 1px solid #EEE;
+    padding-right: 28px;
+}
+
+.buttonsGroupslash{
+    position: relative;
+    bottom: -31px;
+}
+
+.textAreaContainerBorderhightGenerate textarea{
+    height: 100%;
+    padding-bottom: 0;
+}
+
+.textAreaHeadingSearch h4{
+color: #7C838F;
+font-family: "Space Grotesk";
+font-size: 16px;
+font-weight: 300;
+line-height: 140%; /* 22.4px */
+border-radius: 16px;
+border: 1px solid #E3E3E3;
+background: #FFF;
+box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.10);
+padding: 11px 24px;
+width: max-content;
+margin: 0;
+}
+.textAreaHeadingSearch {
+   display: flex;
+   justify-content: end;
+   padding: 16px 16px;
+}
+
+.textAreaParaSearch p{
+color: #7C838F;
+font-family: "Space Grotesk";
+font-size: 16px;
+font-weight: 300;
+line-height: 140%; /* 22.4px */
+border-radius: 16px;
+border: 1px solid #E3E3E3;
+background: #FFF;
+box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.10);
+padding: 11px 24px;
+margin-bottom: 71px;
+}
+.textAreaParaSearch{
+    padding: 0 16px;
+}
+
+.textAreaContainerBorderhightGenerate{
+border-radius: 16px;
+border: 1px solid #E3E3E3;
+margin: 0 16px 16px 16px;
+}
+
+
+
+
+
+
+@media (max-width:1200px) {
+    .PrfAccBg {
+        flex-direction: column;
+    }
+
+    .turnitDashOvervCont {
+        padding: 32px 30px;
+    }
+}
+
+@media (max-width:992px) {
+    .contentWithMenu {
+        margin-left: 0px;
+    }
+
+    .turnitApiDetectorKey {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .openButton {
+        position: absolute;
+    }
+
+}
+
+@media (max-width:767px) {
+    .turnitDashboardRight {
+        padding: 12px;
+    }
+
+    .turnitDashMenu {
+        padding-bottom: 16px;
+    }
+
+    .turnitDashMenuPages ul {
+        padding-top: 16px;
+    }
+
+    .turnitDashMenuPages ul li a {
+        padding: 10.5px 8px;
+    }
+
+    .turnitDashMenuRecent h6 {
+        padding: 13.3px 12px;
+    }
+
+    .turnitDashboardRight {
+        height: 100%;
+    }
+
+    .openButton img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .turnitDashboardLeftContentListName h4 {
+        font-size: 21px;
+    }
+
+    .tDLeftDarkMode button,
+    .tDLeftNotification button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tDLeftDarkMode button svg,
+    .tDLeftNotification button svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .tDleftAvtar h5 {
+        display: none;
+    }
+
+    .tDleftAvtar img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contentWithoutMenu {
+        padding: 32px 16px 16px 58px;
+    }
+
+    .openButton {
+        top: 32px;
+        position: absolute;
+    }
+
+    .turnitDashOvervCont {
+        padding: 16px 16px;
+    }
+
+    .turnitDashOvervContLink a,
+    .turnitDashOvervContLink {
+        gap: 8px;
+    }
+
+    .startDashboardOverview {
+        margin-top: 16px;
+        padding: 12px;
+    }
+
+    .startDashboardOverview h4 {
+        font-size: 18px;
+    }
+
+    .startDashboardOverviewContent {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .sDOverviewContentLeftScroll {
+        overflow: visible;
+        overflow-y: unset;
+        height: 100%;
+    }
+
+    .sDOverviewContentLeft {
+        height: 100%;
+        padding: 16px 16px 4px 16px;
+    }
+
+    .sDOContentLeftTxt h5 {
+        font-size: 14px;
+    }
+
+    .sDOContentLeftTxt p {
+        font-size: 13px;
+    }
+
+    .sDOContentLeftTxtList ul li h6 {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .sDOContentLeftTxtList ul li p {
+        font-size: 13px;
+    }
+
+    .sDOContentLeftTxtVersion:last-child {
+        border-bottom: unset;
+    }
+
+    .starttextAreaContainer {
+        margin: 16px 0;
+    }
+
+    .textAreaContainer {
+        padding: 16px 12px 94px 12px;
+        height: 100%;
+
+    }
+
+    .detectorSection {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .actionButtonsWrapAllBg {
+        padding: 12px;
+    }
+
+    .actionButton {
+        padding: 11px 12px;
+        gap: 8px;
+    }
+    .actionButtonsWrapAllBg  .actionButton, .buttonsGroupslash .actionButton{
+        padding: 6px 12px;
+    }
+
+    .actionButton svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .textInfo {
+        font-size: 12px;
+    }
+
+    .dashboard_aiDetector___bzsI {
+        padding: 6px 30px;
+    }
+
+    .creditsRequired {
+        font-size: 12px;
+        padding-top: 9px;
+        text-align: center;
+    }
+
+    .planText {
+        font-size: 14px;
+    }
+
+    .planStatusContainer {
+        padding-bottom: 16px;
+    }
+
+    .planToggle {
+        width: 28px;
+        height: 16px;
+    }
+
+    .circle {
+        width: 12px;
+        height: 12px;
+    }
+
+    .circle.active {
+        left: 13px;
+    }
+
+    .turnitAccountBgAccor {
+        display: block;
+    }
+
+    .tapSidebarAcc {
+        display: none;
+    }
+
+    .tapUserName h4 {
+        font-size: 24px;
+    }
+
+    .turnitAccountUser {
+        gap: 16px;
+        padding-bottom: 32px;
+    }
+
+    .turnitAccountBg {
+        margin-top: 16px;
+        padding: 16px 12px;
+    }
+
+    .prfAccInfoProfileEmail p {
+        gap: 10px;
+        font-size: 16px;
+        justify-content: space-between;
+    }
+
+    .prfAccInfoProfile h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .prfAccInfoProfile p {
+        padding-bottom: 20px;
+    }
+
+    .prfAccInfoProfileName h5 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .prfAccInfoProfileName p {
+        font-size: 16px;
+        padding-bottom: 20px;
+    }
+
+    .dprfAccInfoProfileEmail h5 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .PrfAccBg {
+        gap: 32px;
+    }
+
+    .prfAccInfoProfilePassword h4 {
+        font-size: 15px;
+    }
+
+    .prfAccInfoProfilePassword button {
+        font-size: 18px;
+        padding-bottom: 25px;
+    }
+
+    .prfAccInfoProfileSubscr p {
+        font-size: 16px;
+    }
+
+    .prfAccInfoProfileSubscr h6 {
+        font-size: 18px;
+        padding: 8px 0;
+    }
+
+    .tuhmAuAccAccount h4 {
+        font-size: 18px;
+    }
+
+    .tuhmAuAccAccount h6 {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .tuhmAuAccAccount p {
+        font-size: 13px;
+        margin-bottom: 32px;
+    }
+
+    .tuhmAuAccDanger {
+        padding: 12px;
+    }
+
+    .tuhmAuAccDanger h4 {
+        font-size: 18px;
+    }
+
+    .tuhmAuAccDanger p {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .tuhmAuAccDanger button {
+        width: 100%;
+    }
+
+    .turnitDashBillingContent h4 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .turnitDashBillingContent p {
+        font-size: 14px;
+    }
+
+    .turnitDashBillingContent,
+    .turnitDashBillingCurrent {
+        padding: 12px 0;
+    }
+
+    .turnitDashBillingCurrent h4 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .turnitDashBillingCurrent p {
+        font-size: 18px;
+    }
+
+    .turnitApiDetectorContent h4 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .turnitApiDetectorContent p {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+
+    .tApiDetectorKey h5 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .tApiDetectorKey input {
+        padding: 5px 12px;
+    }
+    
+    .tDleftAvtar::after{
+        position: absolute;
+        content: url(/images/dash-user-arr.svg);
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+    .tDleftAvtar .dashUserBtnPr{
+        right: 0px;
+        }
+        .buttonsGroupslash {
+            bottom: 16px;
+            right: -16px;
+        }
+        .textAreaHeadingSearch h4 , .textAreaParaSearch p{
+            font-size: 12px;
+            padding: 11px;
+        }
+        .textAreaHeadingSearch {
+            padding: 12px;
+        }
+        .textAreaParaSearch {
+            padding: 0 12px;
+        }
+        .textAreaContainerBorderhightGenerate {
+            margin: 0 12px 12px 12px;
+        }
+        .textAreaContainerBorderhightGenerate textarea {
+            padding: 8px;
+            padding-bottom: 0;
+
+        }
+        .textAreaContainerBorderhightGenerate textarea::placeholder , .textAreaContainerBorderLine textarea::placeholder{
+            font-size: 12px;
+
+        }
+        .actionButtonsWrapAllBg {
+            padding: 4px;
+        }
+}
