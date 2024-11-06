@@ -85,7 +85,7 @@ const Humanizer = () => {
    
     console.log("i got this in response", { text })
     try {
-      const response = await fetch('http://54.91.35.194/generate', {
+      const response = await fetch('https://human.hianant.com/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
